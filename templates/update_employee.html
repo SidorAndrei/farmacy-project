@@ -1,0 +1,10 @@
+{% extends 'base_template.html' %}
+
+{% block centerDiv %}
+        <form method="post" action="{{ url_for('update_employee_in_db',id_employee=employee.ID_employee) }}" style="display:flex;flex-direction: column;justify-content: center; margin-left: 700px;">
+            <label for="employee_name">Name:</label><br>
+            <textarea name="employee_name" id="employee_name" rows="1" cols="60">{{ employee.Name }}</textarea><br><br>
+            <button type="submit">UPDATE EMPLOYEE</button>
+        </form>
+
+{% endblock %}

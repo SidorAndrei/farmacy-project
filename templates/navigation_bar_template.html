@@ -1,48 +1,42 @@
 <header>
      <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="">Home</a>
+            <a class="navbar-brand" href="{{ url_for('main_page') }}">Home</a>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a
                         class="nav-link active"
                         aria-current="page"
-                        href=""
-                        >List questions</a
+                        href="{{ url_for('inserts_page') }}"
+                        >INSERT COMMANDS</a
                     >
                     <a
                         class="nav-link active"
                         aria-current="page"
-                        href=""
-                        >Bonus questions</a
+                        href="{{ url_for('deletes_page') }}"
+                        >DELETE COMMANDS</a
                     >
                     <a
                         class="nav-link active"
                         aria-current="page"
-                        href=""
-                        >Add question</a
+                        href="{{ url_for('updates_page') }}"
+                        >UPDATE COMMANDS</a
                     >
                     <a
                         class="nav-link active"
                         aria-current="page"
-                        href=""
-                        >List Users</a
+                        href="{{ url_for('selects_join_page') }}"
+                        >SELECT COMMANDS</a
                     >
                     <a
                         class="nav-link active"
                         aria-current="page"
-                        href=""
-                        >List <br>Tags</a
-                    >
-                    <a
-                        class="nav-link active"
-                        aria-current="page"
-                        href=""
-                        >DEMO</a
+                        href="{{ url_for('selects_complex_page') }}"
+                        >COMPLEX SELECTS</a
                     >
                 </div>
             <div class="navbar-nav floatNav">
-                <a class="nav-link disabled logout" href="">
+                <a class="nav-link disabled logout" href="{{ url_for('logout_page') }}">
                     LOG OUT
                 </a>
                 <a class="nav-link disabled account">

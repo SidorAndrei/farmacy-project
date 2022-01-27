@@ -1,0 +1,24 @@
+{% extends 'base_template.html' %}
+
+{% block centerDiv %}
+
+    <div class="table_div">
+        <table>
+            <thead>
+                {% for head in headers %}
+                    <th><p>{{ head }}</p></th>
+                {% endfor %}
+            </thead>
+            <tbody>
+                {% for element in elements %}
+                    <tr>
+                        {% for head in headers %}
+                            <td><p>{{ element[head] }}</p></td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

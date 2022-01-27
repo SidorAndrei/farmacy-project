@@ -1,0 +1,56 @@
+{% extends 'base_template.html' %}
+
+{% block centerDiv %}
+    <div class="wrapper_inserts">
+        <div class="product-card">
+            <form method="post" action="{{ url_for('select_join_1') }}">
+                <h3>SELECT PRODUCTS GROUPED BY PROVIDER</h3>
+                <button type="submit">SEE RESULT</button>
+            </form>
+        </div>
+        <div class="product-card">
+            <form method="post" action="{{ url_for('select_join_2') }}">
+                <h3>SELECT PRODUCTS BY PROVIDER ID</h3>
+                <select name="provider">
+                    <option value="" selected disabled hidden>SELECT PROVIDER</option>
+                    {% for provider in providers %}
+                        <option value="{{ provider.ID_provider }}">{{ provider.Name }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit">SEE RESULT</button>
+            </form>
+        </div>
+        <div class="product-card">
+            <form method="post" action="{{ url_for('select_join_3') }}">
+                <h3>SELECT RECIPES</h3>
+                <button type="submit">SEE RESULT</button>
+            </form>
+        </div>
+        <div class="product-card">
+            <form method="post" action="{{ url_for('select_join_4') }}">
+                <h3>SELECT RECIPES PLACE BY EMPLOYEE NAME</h3>
+                <label for="employee_name">Employee Name:</label><br>
+                <input type="text" name="employee_name" id="employee_name">
+                <button type="submit">SEE RESULT</button>
+            </form>
+        </div>
+        <div class="product-card">
+            <form method="post" action="{{ url_for('select_join_5') }}">
+                <h3>SELECT AVAILABLE SALES</h3>
+                <button type="submit">SEE RESULT</button>
+            </form>
+        </div>
+        <div class="product-card">
+            <form method="post" action="{{ url_for('select_join_6') }}">
+                <h3>SELECT RECIPE CONTENT</h3>
+                <select name="recipe">
+                    <option value="" selected disabled hidden>SELECT RECIPE</option>
+                    {% for recipe in recipes %}
+                        <option value="{{ recipe.id_recipes }}">{{ recipe.id_recipes }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit">SEE RESULT</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'base_template.html' %}
+
+{% block centerDiv %}
+    <div class="title">
+        {{ message }}
+    </div>
+    <div class="wrapper_inserts">
+
+        <div class="product-card">
+            <form method="post" action="{{ url_for('insert_medicine') }}">
+                <h3>INSERT MEDICINE</h3>
+                <label for="medicine_code">Code:</label>
+                <input type="number" name="medicine_code" id="medicine_code"><br><br>
+                <label for="medicine_name">Name:</label>
+                <input type="text" name="medicine_name" id="medicine_name"><br><br>
+                <label for="medicine_activity_area">Activity area:</label>
+                <input type="text" name="medicine_activity_area" id="medicine_activity_area"><br><br>
+                <label for="medicine_production_date">Production date:</label>
+                <input type="date" name="medicine_production_date" id="medicine_production_date"><br><br>
+                <label for="medicine_expiration_date">Expiration date:</label>
+                <input type="date" name="medicine_expiration_date" id="medicine_expiration_date"><br><br>
+                <label for="medicine_price">Price:</label>
+                <input type="number" name="medicine_price" id="medicine_price"><br><br>
+                <label for="medicine_provider">Provider:</label>
+                <select name="medicine_provider" id="medicine_provider"><br><br>
+                    <option value="" selected disabled hidden>Choose provider</option>
+                    {% for provider in providers %}
+                        <option value="{{ provider.ID_provider }}">{{ provider.Name }}</option>
+                    {% endfor %}
+                </select><br><br>
+                <label for="medicine_stock">Stock:</label>
+                <input type="number" name="medicine_stock" id="medicine_stock"><br><br>
+                <button type="submit">INSERT MEDICINE</button>
+            </form>
+        </div>
+
+        <div class="product-card">
+            <form method="post" action="{{ url_for('insert_employee') }}">
+                <h3>INSERT EMPLOYEE</h3>
+                <label for="employee_name">Name:</label>
+                <input type="text" name="employee_name" id="employee_name"><br><br>
+                <label for="employee_cnp">CNP</label>
+                <input type="number" name="employee_cnp" id="employee_cnp"><br><br>
+                <button type="submit">INSERT EMPLOYEE</button>
+            </form>
+        </div>
+
+        <div class="product-card">
+            <form method="post" action="{{ url_for('insert_client') }}">
+                <h3>INSERT CUSTOMER</h3>
+                <label for="customer_name">Name:</label>
+                <input type="text" name="customer_name" id="customer_name"><br><br>
+                <label for="customer_cnp">CNP</label>
+                <input type="number" name="customer_cnp" id="customer_cnp"><br><br>
+                <label for="customer_address">Address</label>
+                <input type="text" name="customer_address" id="customer_address"><br><br>
+                <label for="customer_code">Code Customer</label>
+                <input type="number" name="customer_code" id="customer_code"><br><br>
+                <label for="customer_gender">Gender</label>
+                <select name="customer_gender" id="customer_gender">
+                    <option value="" selected disabled hidden>Choose your gender</option>
+                    <option value="Masculin">Male</option>
+                    <option value="Feminin">Female</option>
+                </select><br><br>
+                <button type="submit">INSERT CUSTOMER</button>
+            </form>
+        </div>
+
+    <div class="product-card">
+            <form method="post" action="{{ url_for('insert_provider') }}">
+                <h3>INSERT PROVIDER</h3>
+                <label for="provider_name">Name:</label>
+                <input type="text" name="provider_name" id="provider_name"><br><br>
+                <label for="provider_adress">Address</label>
+                <input type="text" name="provider_adress" id="provider_adress"><br><br>
+                <button type="submit">INSERT PROVIDER</button>
+            </form>
+        </div>
+
+
+    </div>
+{% endblock %}

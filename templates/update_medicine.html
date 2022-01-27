@@ -1,0 +1,16 @@
+{% extends 'base_template.html' %}
+
+{% block centerDiv %}
+        <form method="post" action="{{ url_for('update_medicine_in_db',id_medicine=medicine.ID_medicine) }}" style="display:flex;flex-direction: column;justify-content: center; margin-left: 700px;">
+            <label for="medicine_name">Name:</label><br>
+            <textarea name="medicine_name" id="medicine_name" rows="1" cols="60">{{ medicine.Name }}</textarea><br>
+            <label for="medicine_activity_area">Activity area:</label><br>
+            <textarea name="medicine_activity_area" id="medicine_activity_area" rows="1" cols="60">{{ medicine.Activity_area }}</textarea><br>
+            <label for="medicine_price">Price:</label><br>
+            <textarea name="medicine_price" id="medicine_price" rows="1" cols="60">{{ medicine.Price }}</textarea><br>
+            <label for="medicine_stock">Stock:</label><br>
+            <textarea name="medicine_stock" id="medicine_stock" rows="1" cols="60">{{ medicine.Stock }}</textarea><br>
+            <button type="submit">UPDATE PROVIDER</button>
+        </form>
+
+{% endblock %}

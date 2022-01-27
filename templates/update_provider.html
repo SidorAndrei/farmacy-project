@@ -1,0 +1,12 @@
+{% extends 'base_template.html' %}
+
+{% block centerDiv %}
+        <form method="post" action="{{ url_for('update_provider_in_db',id_provider=provider.ID_provider) }}" style="display:flex;flex-direction: column;justify-content: center; margin-left: 700px;">
+            <label for="provider_name">Name:</label><br>
+            <textarea name="provider_name" id="provider_name" rows="1" cols="60">{{ provider.Name }}</textarea><br><br>
+            <label for="provider_address">Address:</label><br>
+            <textarea name="provider_address" id="provider_address" rows="1" cols="60">{{ provider.Adress }}</textarea><br><br>
+            <button type="submit">UPDATE PROVIDER</button>
+        </form>
+
+{% endblock %}

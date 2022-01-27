@@ -1,0 +1,67 @@
+{% extends 'base_template.html' %}
+
+{% block centerDiv %}
+    <div class="title">
+            {{ message }}
+        </div>
+    <div class="wrapper_inserts">
+
+        <div class="product-card">
+            <form action="{{ url_for('update_medicine') }}" method="post">
+                <h3>UPDATE MEDICINE</h3>
+                <label for="update_medicine">Medicine:</label><br>
+                <select name="update_medicine" id="update_medicine">
+                    <option value="" selected disabled hidden>Select Medicine</option>
+                    {% for medicine in medicines %}
+                        <option value="{{ medicine.ID_medicine }}">{{ medicine.Name }}</option>
+                    {% endfor %}
+                </select><br><br>
+                <button type="submit">Go to update page</button>
+            </form>
+        </div>
+
+         <div class="product-card">
+            <form action="{{ url_for('update_employee') }}" method="post">
+                <h3>UPDATE EMPLOYEE </h3>
+                <label for="update_employee">Employee:</label><br>
+                <select name="update_employee" id="">
+                    <option value="update_employee" selected disabled hidden>Select Employee</option>
+                    {% for  employee in employees %}
+                        <option value="{{ employee.ID_employee }}">{{ employee.Name }}</option>
+                    {% endfor %}
+                </select><br><br>
+                <button type="submit">Go to update page</button>
+            </form>
+        </div>
+
+         <div class="product-card">
+            <form action="{{ url_for('update_provider') }}" method="post">
+                <h3>UPDATE PROVIDER</h3>
+                <label for="update_provider">Provider:</label><br>
+                <select name="update_provider" id="update_provider">
+                    <option value="" selected disabled hidden>Select Provider</option>
+                    {% for provider in providers  %}
+                        <option value="{{ provider.ID_provider }}">{{ provider.Name }}</option>
+                    {% endfor %}
+                </select><br><br>
+                <button type="submit">Go to update page</button>
+            </form>
+        </div>
+
+         <div class="product-card">
+            <form action="{{ url_for('update_client') }}" method="post">
+                <h3>UPDATE CUSTOMER</h3>
+                <label for="update_client">Client:</label><br>
+                <select name="update_client" id="update_client">
+                    <option value="" selected disabled hidden>Select Client</option>
+                    {% for client in clients %}
+                        <option value="{{ client.id_client }}">{{ client.Name }}</option>
+                    {% endfor %}
+                </select><br><br>
+                <button type="submit">Go to update page</button>
+            </form>
+        </div>
+
+    </div>
+    
+{% endblock %}

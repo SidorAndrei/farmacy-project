@@ -1,0 +1,12 @@
+{% extends 'base_template.html' %}
+
+{% block centerDiv %}
+        <form method="post" action="{{ url_for('update_client_in_db',id_client=client.id_client) }}" style="display:flex;flex-direction: column;justify-content: center; margin-left: 700px;">
+            <label for="client_name">Name:</label><br>
+            <textarea name="client_name" id="client_name" rows="1" cols="60">{{ client.Name }}</textarea><br><br>
+            <label for="client_address">Address:</label><br>
+            <textarea name="client_address" id="client_address" rows="1" cols="60">{{ client.Adress }}</textarea><br><br>
+            <button type="submit">UPDATE CLIENT</button>
+        </form>
+
+{% endblock %}

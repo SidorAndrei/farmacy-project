@@ -1,0 +1,65 @@
+{% extends 'base_template.html' %}
+
+{% block centerDiv %}
+
+    <div class="wrapper_inserts">
+
+        <div class="product-card">
+            <form action="{{ url_for('delete_medicine') }}" method="post">
+                <h3>DELETE MEDICINE</h3>
+                <label for="delete_medicine">Medicine:</label>
+                <select name="delete_medicine" id="delete_medicine">
+                    <option value="" selected disabled hidden>Select medicine</option>
+                    {% for medicine in medicines %}
+                        <option value="{{ medicine.ID_medicine }}">{{ medicine.Name }}</option>
+                    {% endfor %}
+                </select><br><br>
+                <button type="submit">DELETE MEDICINE</button>
+            </form>
+        </div>
+
+        <div class="product-card">
+            <form action="{{ url_for('delete_employee') }}" method="post">
+                <h3>DELETE EMPLOYEE</h3>
+                <label for="delete_employee">Employee</label>
+                <select name="delete_employee" id="delete_employee">
+                    <option value="" selected disabled hidden>Select employee</option>
+                    {% for employee in employees %}
+                        <option value="{{ employee.ID_employee }}">{{ employee.Name }}</option>
+                    {% endfor %}
+                </select><br><br>
+                <button type="submit">DELETE EMPLOYEE</button>
+            </form>
+        </div>
+
+        <div class="product-card">
+            <form action="{{ url_for('delete_client') }}" method="post">
+                <h3>DELETE CUSTOMER</h3>
+                <label for="delete_client">Customer:</label>
+                <select name="delete_client" id="delete_client">
+                    <option value="" selected disabled hidden>Select client</option>
+                    {% for client in clients %}
+                        <option value="{{ client.ID_client }}">{{ client.Name }}</option>
+                    {% endfor %}
+                </select><br><br>
+                <button type="submit">DELETE CUSTOMER</button>
+            </form>
+        </div>
+
+        <div class="product-card">
+            <form action="{{ url_for('delete_provider') }}" method="post">
+                <h3>DELETE PROVIDER</h3>
+                <label for="delete_provider">Provider</label>
+                <select name="delete_provider" id="delete_provider">
+                    <option value="" selected disabled hidden>Select provider</option>
+                    {% for provider in providers %}
+                        <option value="{{ provider.ID_provider }}">{{ provider.Name }}</option>
+                    {% endfor %}
+                </select><br><br>
+                <button type="submit">DELETE PROVIDER</button>
+            </form>
+        </div>
+
+    </div>
+
+{% endblock %}

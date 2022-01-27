@@ -1,0 +1,39 @@
+{% extends 'base_template.html' %}
+
+{% block centerDiv %}
+    <div class="wrapper_inserts">
+        <div class="product-card">
+            <form method="post" action="{{ url_for('select_complex_1') }}">
+                <h3>SELECT ALL PRODUCTS WITH SALE</h3>
+                <button type="submit">SEE RESULT</button>
+            </form>
+        </div>
+
+        <div class="product-card">
+            <form method="post" action="{{ url_for('select_complex_2') }}">
+                <h3>SELECT PRODUCTS BY PROVIDER NAME</h3>
+                <label for="provider">Provider name:</label>
+                <input type="text" name="provider" id="provider">
+                <button type="submit">SEE RESULT</button>
+            </form>
+        </div>
+
+        <div class="product-card">
+            <form method="post" action="{{ url_for('select_complex_3') }}">
+                <h3>SELECT PRODUCTS BY PROVIDER CITY</h3>
+                <label for="provider">Provider city:</label>
+                <input type="text" name="provider" id="provider">
+                <button type="submit">SEE RESULT</button>
+            </form>
+        </div>
+
+        <div class="product-card">
+            <form method="post" action="{{ url_for('select_complex_4') }}">
+                <h3>SELECT PRODUCTS BY NAME</h3>
+                <label for="product">Product name:</label>
+                <input type="text" name="product" id="product">
+                <button type="submit">SEE RESULT</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,63 +1,26 @@
-<div class="wrapper">
+{% extends 'base_template.html' %}
 
-{#    {% for product in products %}#}
-        <div class="product-card">
-            <img src="" class="product-image">
-            <div class="product-title">
+{% block centerDiv %}
+    <div class="wrapper">
+
+        {% for product in products %}
+
+            <div class="product-card">
+                <img src="{{ url_for('static',filename='images/'+product.name+'.jpg') }}" class="product-image" width="100%" height="300px">
+                <div class="product-title">
+                    <h2>{{ product.name }}</h2>
+                </div>
+                <div class="price">
+                    {% if product.default_price != product.price_with_sale and product.price_with_sale != None %}
+                        <p class="price"><strike>{{ product.default_price }}</strike> {{ '%0.2f' | format(product.price_with_sale | float) }} RON</p>
+                    {% else %}
+                        <p class="price">{{ product.default_price }} RON</p>
+                    {% endif %}
+                </div>
 
             </div>
 
-        </div>
-{#    {% endfor %}#}
-
-
-    <div class="product-card">
-            <img src="" class="product-image">
-            <div class="product-title">
-
-        </div>
-
-    </div><div class="product-card">
-        <img src="" class="product-image">
-        <div class="product-title">
-
-        </div>
-
-    </div><div class="product-card">
-        <img src="" class="product-image">
-        <div class="product-title">
-
-        </div>
+        {% endfor %}
 
     </div>
-    <div class="product-card">
-        <img src="" class="product-image">
-        <div class="product-title">
-
-    </div>
-
-    </div>
-    <div class="product-card">
-        <img src="" class="product-image">
-        <div class="product-title">
-
-    </div>
-
-    </div>
-    <div class="product-card">
-        <img src="" class="product-image">
-        <div class="product-title">
-
-        </div>
-
-    </div>
-    <div class="product-card">
-        <img src="" class="product-image">
-        <div class="product-title">
-
-        </div>
-
-    </div>
-
-
-</div>
+{% endblock %}
